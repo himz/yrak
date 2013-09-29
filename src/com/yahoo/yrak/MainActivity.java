@@ -72,6 +72,8 @@ public class MainActivity extends Activity {
 			Log.d("LOCATION: ", "No Provider");
 		}
 
+		System.out.println("LAT: "+s_lat + "LONG: "+ s_long);
+
 
 	}
 
@@ -151,7 +153,6 @@ public class MainActivity extends Activity {
 			});*/
 
 			 
-			System.out.println("LAT: "+s_lat + "LONG: "+ s_long);
 			curr_RAK =  DBHelper.getRandomRAK();
 			if (curr_RAK!=null){
 				String rak = curr_RAK.getmTodo();

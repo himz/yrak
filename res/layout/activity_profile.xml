@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp"
+        android:text="Your current location is set to: " />
+
+ <Button
+     android:id="@+id/newButton"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/doneButton"
+     android:layout_below="@+id/doneButton"
+     android:layout_marginTop="27dp"
+     android:text="Try another" />
+
+ <Button
+     android:id="@+id/change_location"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignRight="@+id/textView1"
+     android:layout_below="@+id/textView1"
+     android:layout_marginTop="22dp"
+     android:text="Set My Location" />
+ 
+</RelativeLayout>
