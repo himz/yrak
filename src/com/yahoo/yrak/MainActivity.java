@@ -27,7 +27,6 @@ import com.parse.PushService;
 
 public class MainActivity extends Activity {
 	Button done_rak;
-	Button new_random_rak;
 	private RAKItem raki;
 	private TextView random_rak;
 	private RAKItem curr_RAK;
@@ -61,9 +60,6 @@ public class MainActivity extends Activity {
 
 		done_rak = (Button) findViewById(R.id.doneButton);
 		done_rak.setOnClickListener(done_listener);
-
-		new_random_rak = (Button) findViewById(R.id.newButton);
-		new_random_rak.setOnClickListener(new_rak_listener);
 
 		random_rak = (TextView) findViewById(R.id.textView1);
 

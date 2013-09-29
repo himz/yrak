@@ -15,15 +15,6 @@
         android:text="Your current location is set to: " />
 
  <Button
-     android:id="@+id/newButton"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignLeft="@+id/doneButton"
-     android:layout_below="@+id/doneButton"
-     android:layout_marginTop="27dp"
-     android:text="Try another" />
-
- <Button
      android:id="@+id/change_location"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
@@ -31,5 +22,14 @@
      android:layout_below="@+id/textView1"
      android:layout_marginTop="22dp"
      android:text="Set My Location" />
+
+ <Button
+     android:id="@+id/yahoo_login"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/textView1"
+     android:layout_alignParentTop="true"
+     android:layout_marginTop="18dp"
+     android:text="Login With Yahoo!" />
  
 </RelativeLayout>
