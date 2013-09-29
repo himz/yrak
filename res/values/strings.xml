@@ -4,5 +4,21 @@
     <string name="app_name"></string>
     <string name="menu_settings">Settings</string>
     <string name="random_rak">"Hold the door open for someone today!"</string>
+    
+    
+
+    <string-array name="country_array">
+        <item>Greece</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Israel</item>
+        <item>Thailand</item>
+        <item>Italy</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Turkey</item>
+        <item>Poland</item>
+        <item>India</item>
+    </string-array>
 
 </resources>

@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     tools:context=".MainActivity" >
 
     <TextView
@@ -11,17 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="176dp"
+        android:textColor="@color/y_purple"
+        android:textSize="18sp"
         android:text="Your current location is set to: " />
-
- <Button
-     android:id="@+id/change_location"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignRight="@+id/textView1"
-     android:layout_below="@+id/textView1"
-     android:layout_marginTop="22dp"
-     android:text="Set My Location" />
+    
+  
 
  <Button
      android:id="@+id/yahoo_login"
@@ -31,5 +28,12 @@
      android:layout_alignParentTop="true"
      android:layout_marginTop="18dp"
      android:text="Login With Yahoo!" />
+
+  <Button
+      android:id="@+id/change_my_loc_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/textView1"
+      android:text="Change My Location" />
  
 </RelativeLayout>

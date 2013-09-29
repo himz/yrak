@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/splash2"
         android:layout_width="match_parent"
-        android:layout_height="575dp"
-        android:src="@drawable/splash" />
+        android:layout_height="588dp"
+        android:src="@drawable/splash_v2" />
 
   </LinearLayout>

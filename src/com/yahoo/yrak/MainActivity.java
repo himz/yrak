@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
 
 	static double s_lat = 0.0;
 	static double s_long = 0.0;
+	protected static String search_country;
 
 	 private ShakeListener mShaker;
 	 
@@ -88,7 +89,7 @@ public class MainActivity extends Activity {
 				System.out.println("SHOOK!!!");
 
 				
-				curr_RAK =  DBHelper.getRandomRAK();
+				curr_RAK =  DBHelper.getRandomRAK(search_country);
 				if (curr_RAK!=null){
 					String rak = curr_RAK.getmTodo();
 					System.out.println("rak item: " +rak);
@@ -166,43 +167,6 @@ public class MainActivity extends Activity {
 		}
 	};
 
-
-
-	private OnClickListener new_rak_listener = new OnClickListener(){
-		@Override
-		public void onClick(View v) {
-			//Do Something
-
-			/*ParseQuery<ParseObject> query = ParseQuery.getQuery("RAKObject");
-			 query.getInBackground("OQowgPEaWt", new GetCallback<ParseObject>() {
-
-
-					@Override
-					public void done(ParseObject arg0,
-							com.parse.ParseException arg1) {
-						if (arg1 == null) {
-							String pass = arg0.getString("todo");				    					     
-							Toast toast = Toast.makeText(getApplicationContext(), pass, Toast.LENGTH_LONG);
-							toast.show();
-						}
-						else{
-
-						}
-					}
-			});*/
-
-
-			curr_RAK =  DBHelper.getRandomRAK();
-			if (curr_RAK!=null){
-				String rak = curr_RAK.getmTodo();
-				System.out.println("rak item: " +rak);
-				random_rak.setText(rak);
-			}
-
-
-
-		}
-	};
 
 
 

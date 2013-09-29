@@ -25,7 +25,7 @@ public class DBHelper
 	//  private static DBHelper instance;
 
 	private static RAKItem raki;
- 
+
 	//  private DBHelper()
 	//  {
 	//    instance = this;
@@ -48,41 +48,43 @@ public class DBHelper
 
 
 
-	public static RAKItem getRAKItem(String id)
+//	public static RAKItem getRAKItem(String id)
+//	{
+//
+//		ParseQuery<ParseObject> rakQuery = ParseQuery.getQuery("RAKObject");
+//		rakQuery.whereEqualTo("guid", id);
+//
+//		rakQuery.findInBackground(new FindCallback<ParseObject>()
+//				{
+//			public void done(List<ParseObject> results, ParseException e)
+//			{
+//				if (results != null)
+//				{
+//					String todo = results.get(0).getString("todo");
+//					String duration = results.get(0).getString("duration");
+//					String lat_location = results.get(0).getString("lat_location");
+//					String long_location = results.get(0).getString("long_location");
+//					String tag = results.get(0).getString("tag");
+//					String msg = results.get(0).getString("msg");
+//					raki = new RAKItem(todo, duration, lat_location, long_location, tag, msg);
+//					System.out.println("results: " + todo + " " + duration + ", " +lat_location 
+//							+ ", " + long_location + ", " + tag + ", " + msg);
+//
+//				}
+//			}
+//				});
+//
+//		return raki;
+//	}
+
+	public static RAKItem getRandomRAK(String search_country)
 	{
 
-		ParseQuery<ParseObject> rakQuery = ParseQuery.getQuery("RAKObject");
-		rakQuery.whereEqualTo("guid", id);
-
-		rakQuery.findInBackground(new FindCallback<ParseObject>()
-				{
-			public void done(List<ParseObject> results, ParseException e)
-			{
-				if (results != null)
-				{
-					String todo = results.get(0).getString("todo");
-					String duration = results.get(0).getString("duration");
-					String lat_location = results.get(0).getString("lat_location");
-					String long_location = results.get(0).getString("long_location");
-					String tag = results.get(0).getString("tag");
-					String msg = results.get(0).getString("msg");
-					raki = new RAKItem(todo, duration, lat_location, long_location, tag, msg);
-					System.out.println("results: " + todo + " " + duration + ", " +lat_location 
-							+ ", " + long_location + ", " + tag + ", " + msg);
-
-				}
-			}
-				});
- 
-		return raki;
-	}
-	
-	public static RAKItem getRandomRAK()
-	{
-		
 
 		ParseQuery<ParseObject> rakQuery = ParseQuery.getQuery("RAKObject");
-
+		if (search_country!=null){
+			rakQuery.whereEqualTo("country", search_country);
+		}
 		rakQuery.findInBackground(new FindCallback<ParseObject>()
 				{
 			public void done(List<ParseObject> results, ParseException e)
@@ -105,11 +107,11 @@ public class DBHelper
 					raki = new RAKItem(todo, duration, lat_location, long_location, tag, msg);
 					System.out.println("results: " + todo + " " + duration + ", " +lat_location 
 							+ ", " + long_location + ", " + tag + ", " + msg);
- 
+
 				}
 			}
 				});
- 
+
 		return raki;
 	}
 
