@@ -8,6 +8,15 @@ public class RAKItem {
 	private String mTag; //for now only 1
 	private String mMessage;
 	
+	public RAKItem(String todo, String duration, String lat_loc, String long_loc, String tag, String msg){
+		this.mTodo = todo;
+		this.mDuration = duration;
+		this.mLat_location = lat_loc;
+		this.mLong_location = long_loc;
+		this.mTag = tag;
+		this.mMessage = msg;
+	}
+	
 	public String getmTodo() {
 		return mTodo;
 	}
@@ -56,13 +65,6 @@ public class RAKItem {
 		this.mMessage = mMessage;
 	}
 
-	public RAKItem(String todo, String duration, String lat_loc, String long_loc, String tag, String msg){
-		this.mTodo = todo;
-		this.mDuration = duration;
-		this.mLat_location = lat_loc;
-		this.mLong_location = long_loc;
-		this.mTag = tag;
-		this.mMessage = msg;
-	}
+
 
 }
