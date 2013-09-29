@@ -1,9 +1,8 @@
 package com.yahoo.yrak;
 
-import java.util.List;
-
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,23 +10,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.FindCallback;
-import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
-import com.parse.ParseException;
 import com.parse.ParseInstallation;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 import com.parse.PushService;
 
 public class MainActivity extends Activity {
 	Button done_rak;
 	Button new_random_rak;
 	private RAKItem raki;
+	private TextView random_rak;
+	private RAKItem curr_RAK;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +45,9 @@ public class MainActivity extends Activity {
 
 		new_random_rak = (Button) findViewById(R.id.newButton);
 		new_random_rak.setOnClickListener(new_rak_listener);
+		
+		random_rak = (TextView) findViewById(R.id.textView1);
+		
 
 
 	}
@@ -58,17 +57,25 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			//Do Something
 
-			ParseObject rakObject = new ParseObject("RAKObject");
+//			ParseObject rakObject = new ParseObject("RAKObject");
+//
+//			String s = "testing";
+//			rakObject.put("todo", s);
+//			rakObject.put("duration", s);
+//			rakObject.put("lat_location", s);
+//			rakObject.put("long_location", s);
+//			rakObject.put("tag", s);
+//			rakObject.put("msg", s);
+//			
+//			rakObject.saveInBackground();
+			String msg = curr_RAK.getmMessage();
+			Context context = getApplicationContext();
+			CharSequence text = msg;
+			int duration = Toast.LENGTH_LONG;
 
-			String s = "testing";
-			rakObject.put("todo", s);
-			rakObject.put("duration", s);
-			rakObject.put("lat_location", s);
-			rakObject.put("long_location", s);
-			rakObject.put("tag", s);
-			rakObject.put("msg", s);
+			Toast toast = Toast.makeText(context, text, duration);
+			toast.show();
 			
-			rakObject.saveInBackground();
 		}
 	};
 
@@ -95,11 +102,19 @@ public class MainActivity extends Activity {
 					}
 			});*/
 			
-			DBHelper.getRAKItem("1234");
+			curr_RAK =  DBHelper.getRandomRAK();
+			if (curr_RAK!=null){
+				String rak = curr_RAK.getmTodo();
+				System.out.println("rak item: " +rak);
+				random_rak.setText(rak);
+			}
+			
+			
+			
 		}
 	};
-
-
+ 
+  
  
 	
 
