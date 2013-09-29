@@ -27,14 +27,9 @@ public class ProfileActivity extends Activity{
 	private OnClickListener change_loc_listener = new OnClickListener(){
 		@Override
 		public void onClick(View v) {
-			
-			String msg = curr_RAK.getmMessage();
-			Context context = getApplicationContext();
-			CharSequence text = msg;
-			int duration = Toast.LENGTH_LONG;
+			//Do Something
 
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
+			
 
 		}
 	};

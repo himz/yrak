@@ -25,7 +25,7 @@ public class DBHelper
 	//  private static DBHelper instance;
 
 	private static RAKItem raki;
-
+ 
 	//  private DBHelper()
 	//  {
 	//    instance = this;
